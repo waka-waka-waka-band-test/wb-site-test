@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Waka Waka Waka Band — Merch</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* CONSISTENT DESIGN VARIABLES */
+    :root{--accent:#ff4d6d;--accent-2:#39dbe8;--bg:#0b0710;--card:rgba(255,255,255,0.03);--glass:rgba(255,255,255,0.04);--text:#f6f7f9;--muted:rgba(246,247,249,0.78)}
+    
+    body{margin:0;font-family:Inter,Arial;background:linear-gradient(180deg,#08050a,#0b0710);color:var(--text);-webkit-font-smoothing:antialiased; overflow-x: hidden;}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    
+    /* HEADER & NAV - MATCHED TO INDEX.HTML */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom: 1px solid rgba(255,255,255,0.05);margin-bottom: 20px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .mark{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+    .brand .title{font-weight:800}
+
+    nav{display:flex;gap:8px;align-items:center}
+    .nav-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;background:transparent;border:1px solid transparent;transition:all .18s;color:var(--text)}
+    .nav-link:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .nav-link[data-active="true"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071018}
+
+    /* INFINITE MARQUEE STYLES */
+    .marquee-container {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow: hidden;
+      padding: 40px 0;
+      background: rgba(255,255,255,0.01);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content; /* Ensures the track is as wide as all images combined */
+      animation: scrollMarquee 30s linear infinite; /* Adjust time for speed */
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused; /* Slows down or stops on hover so people can look */
+    }
+
+    .merch-item {
+      width: 300px;
+      height: 300px;
+      margin: 0 20px;
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .merch-item:hover {
+      transform: scale(1.05);
+      border-color: var(--accent);
+    }
+
+    .merch-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* THE ANIMATION: Moves the track to the left */
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* Slides exactly half the track (since we duplicated the items) */
+    }
+
+    /* CALL TO ACTION BOX */
+    .shop-info {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .shop-btn {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #071018;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .shop-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
+    }
+
+    footer{padding:40px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px; border-top: 1px solid rgba(255,255,255,0.05);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="brand">
+        <img src="favicon.png" alt="Waka Waka Waka Logo" style="width:10%; height:auto;">
+        <div>
+          <div class="title">Waka Waka Waka Band</div>
+          <div style="font-size:12px;color:var(--muted)">Official site</div>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="songs.html">Songs</a>
+        <a class="nav-link" href="concerts.html">Concerts</a>
+        <a class="nav-link" href="merch.html" data-active="true">Merch</a>
+        <a class="nav-link" href="socials.html">Socials</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shop-info">
+        <div style="text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: var(--accent); font-weight: 800; margin-bottom: 10px;">New Drop</div>
+        <h1 style="font-size: 42px; margin: 0;">The Band Collection</h1>
+      </div>
+
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <div class="merch-item"><img src="https://i.ibb.co/nN5h5n29/wb-gray.png" alt="Merch 1"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/My3ZZjbj/hood.png" alt="Merch 2"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/v6wb45zm/bald-loon.png" alt="Merch 3"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/m5kNvMMf/wb-dg.png" alt="Merch 4"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/spj5XTBF/wb-chili.png" alt="Merch 5"></div>
+          
+          <div class="merch-item"><img src="https://i.ibb.co/1YfrPz6M/sun.png" alt="Merch 1"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/nN5h5n29/wb-gray.png" alt="Merch 2"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/Y7JDhSMb/image-removebg-preview.png" alt="Merch 3"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/6RJyX9vG/wb-shirt.png" alt="Merch 4"></div>
+          <div class="merch-item"><img src="https://i.ibb.co/spj5XTBF/wb-chili.png" alt="Merch 5"></div>
+        </div>
+      </div>
+
+      <div class="shop-info">
+        <p style="color:var(--muted); max-width: 500px; margin: 0 auto 32px;">
+          Our official merch store is packed with hoodies and tees with new designs!
+        </p>
+        <a href="https://wakarockband.threadless.com/" target="_blank" class="shop-btn">
+          Visit the Band Shop
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div>© Waka Waka Waka Band • <span style="color:var(--muted)">2025</span></div>
+      <a href="index.html" style="color:var(--muted);text-decoration:none">Back to Home</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+
+    <title>Waka Waka Waka Band</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Sriracha:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+
+        html { height:100%; box-sizing: border-box;}
+
+        body {  font-family: 'Sriracha', sans-serif; color: white; font-size: 28pt; font-weight: 300;
+                background-color: #eeeeee; text-align: center; height:100%; padding: 0; margin: 0; }
+        * {
+            box-sizing: inherit;
+        }
+
+        .page-header { background-color: #eeeeee; color: #fff; padding: 10px 0 0 0; margin: 0;
+                       font-size: 20pt;
+        }
+        .page-header2 { background-color: #999999; color: #fff; padding: 0px 0; margin:0; font-size: 20pt; }
+        nav{display:flex;gap:8px;align-items:center}
+    .nav-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;background:transparent;border:1px solid transparent;transition:all .18s;color: #071018;}
+    .nav-link:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .nav-link[data-active="true"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071018}
+
+        main .secondary, li { font-size: 18pt;}
+        ul li { font-size: 18pt; margin-left: 10px; margin-right: 0pt; padding: 0px;}
+
+        .page-header p, .page-header2 p {
+            font-size: clamp(2.5rem, 3.5vw, 2.5rem); line-height: 110%; color: white;
+            background-color: #aaaaaa; margin: 0; margin-top: 15px; padding: 12px 12px 12px 12px;
+        }
+        .page-header2 p { margin-top: 0;
+        }
+
+        div.container {
+          width: 100%; height: 630px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* horizontal */
+          align-items: center;     /* vertical */
+          padding-bottom: 20px;
+          width: 100%;
+          height: auto !important;
+
+
+        }
+
+
+        div.container#concert{
+          padding: 0 0 0 0;
+          background-color: black;
+        }
+
+
+        div.container#winterholidays {
+          background-color: #960000;
+        }
+
+        div.container#putitaway {
+          height: 520px !important;
+          background-color: black;
+          padding-bottom: 30px;
+        }
+
+        div.container p {
+          font-size: clamp(0.7rem, 2.3vw, 1.8rem);
+          margin-bottom: 0;
+        }
+
+        div.container#concert p  {
+          background-color: #e0e0e0e0;
+          margin-top: 0;
+          font-size: clamp(1.2rem, 3.1vw, 2rem);
+          color: black;
+          margin-bottom: 15px;
+        }
+
+        div.container#concert a {
+          color: black !important;
+        }
+
+        .container img {
+
+          position: static;
+          display: block;
+          height: auto;
+          flex-shrink: 0;
+          object-fit: contain;
+        }
+
+        .container img#wb {
+          min-width: 950px;
+          max-width: 50%;
+          max-height: 600px;
+        }
+
+        .container img#winterholidays {
+          max-width: 20%;
+        }
+
+        .video   { display: block; margin-left: auto; margin-right: auto; left: 0; width: 1120px; height: 630px;}
+
+        p.primary { margin: 30px 0px 10px;}
+
+        img#logo {margin-bottom: -20px; margin-top: 0px; width: 150px; border-radius: 50%;
+                  filter: drop-shadow(0px 0px 50px white);}
+        a               { color: white; }
+        .wrapper {
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        ul li { color: #777777 !important; }
+        ul li a { color: #777777 !important; }
+        .page-footer { color: #777777 !important; padding: 0px 0px 20px 0px; font-size: 24pt; }
+        .page-footer a { color: #777777 }
+        .material-icons { padding: 10px; font-size: 30px; width: 30px; text-decoration: none; margin: 5px 0px 0 5px; color: #777777; }
+        .page-body {  padding: 0px;}
+
+
+        @media only screen and (max-width: 1000px) {
+          main .primary { font-size: 32pt; font-weight: 200; }
+          main .primary strong { font-weight: 1000;}
+          main .primary a  { display: block; }
+          main .secondary { font-size: 24pt !important;}
+          img#logo { margin-bottom: -20px; width: 25% !important; }
+
+
+
+          .video {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+
+          }
+
+
+          footer a, footer .material-icons { display: inline; font-size: 24pt; }
+          footer .icon, .material-icons { text-decoration: none;}
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+        <div class="wrapper">
+
+          <header class="page-header">
+            <nav class="nav-right" aria-label="Main Navigation">
+        <a class="nav-link" href="index.html" data-link>Home</a>
+      </nav>
+              <img id="logo" src="wakawakawakaband_logo.png">
+              <p>Watch the <a href="https://youtu.be/OKir4VoiyEc?si=flzfAoa0yETWCPlL" target="_blank">2025 Holiday Concert</a></p>
+          </header>
+
+            <main class="page-body">
+              <div class="container" id="concert">
+               <a href="https://youtu.be/OKir4VoiyEc?si=flzfAoa0yETWCPlL" target="_blank"><img id="wb" src="concert_2025_2.jpg" height="100%"></a>
+             </div>
+              <div class="container" id="winterholidays">
+                <p>Listen to Our Latest Single <strong>Winter Holidays</strong> on
+                  <a href="https://open.spotify.com/track/1eHmYdGASGHRYxBF84zgSf?si=4c2daf903445463f" target="_blank">Spotify</a>,
+                  <a href="https://music.amazon.com/albums/B0DPR4KL2V?ref=dm_sh_KIaRsjrO6HTmQrTD7nXB3UerM" target="_blank">Amazon Music</a> or
+                  <a href="https://youtu.be/lpy660r_T8c?si=ZFwAeAvSTPoJhT8O" target="_blank">YouTube</a>
+                </p>
+               <img id="winterholidays" src="winterholidays_albumcover.jpg" height="100%">
+             </div>
+              <div class="container" id="putitaway">
+                <div><p>2nd Single: Put It Away</p></div>
+               <iframe class="video" src="https://www.youtube.com/embed/OTnNDIqVMDE?si=O-CrlzMQaSRH1SAh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+             </div>
+
+
+
+              <p class="secondary">
+
+                </p><ul style="max-width: 900px; text-align: left; margin: auto;">
+                  <li>Our first original: Candy Song on
+                    <a href="https://open.spotify.com/track/60f6yWPbufEZafaC35OvkI?si=kVHfZo5NQjCz95hnEKg6Zg" target="_blank">Spotify</a>,
+                    <a href="https://music.apple.com/us/album/candy-song/1632024022?i=1632024024" target="_blank">Apple Music</a>,
+                    <a href="https://music.amazon.com/albums/B0B59K7CSM?ref=dm_sh_vWlP58A4TDXRKpO20y6MCsfXu" target="_blank">Amazon Music</a>,
+                    <a href="https://youtu.be/p5TF7n2hvX8" target="_blank">YouTube</a>
+                  </li>
+                  <li>
+                    Watch Our Past Concerts:
+                  <br>
+                      <ul>
+                        <li><a href="https://youtu.be/OKir4VoiyEc?si=flzfAoa0yETWCPlL" target="_blank">2025 Holiday Concert</a> &nbsp;|&nbsp;
+                            <a href="https://www.youtube.com/watch?v=ykZD_jPdi-c&amp;list=PLxfBDwLwrJ_kHTUsPGgQonJY3PmhYJEhK&amp;index=1" target="_blank">Just the Songs</a>
+                            </li>
+                        <li><a href="https://www.youtube.com/watch?v=SrYOr1e-E_8" target="_blank">2023 Holiday Concert</a> &nbsp;|&nbsp;
+                            <a href="https://www.youtube.com/watch?v=dj7moKAilSM&amp;list=PLxfBDwLwrJ_lsKDW3eMaTB3xLS_5h-WDX&amp;index=1" target="_blank">2023 and Prior Concert Songs</a>
+                            </li>
+                        <li><a href="https://youtu.be/od0Ti_ObCWs?si=QBvCBSJUIQdz90Kt" target="_blank">2021 Summer Concert</a></li>
+                      </ul>
+                  </li>
+                </ul>
+              <p></p>
+            </main>
+            <footer class="page-footer">
+              <a href="https://wakarockband.threadless.com/" target="_blank">2025 Merch</a>
+              <a class="icon" href="https://www.instagram.com/wakawakawakaband/" target="_blank"><i class="material-icons fa fa-instagram"></i></a>
+              <a class="icon" href="https://www.facebook.com/wakarockband/" target="_blank"><i class="material-icons fa fa-facebook"></i></a>
+            </footer>
+        </div>
+
+
+
+</body></html>

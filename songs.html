@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Waka Waka Waka Band — Songs</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* MATCHED FROM YOUR ORIGINAL INDEX.HTML */
+    :root{--accent:#ff4d6d;--accent-2:#39dbe8;--bg:#0b0710;--card:rgba(255,255,255,0.03);--glass:rgba(255,255,255,0.04);--text:#f6f7f9;--muted:rgba(246,247,249,0.78)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#08050a 0%, #0b0710 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+
+    /* HEADER & NAV */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom: 1px solid rgba(255,255,255,0.05);margin-bottom: 20px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .title{font-weight:800}
+
+    nav{display:flex;gap:8px;align-items:center}
+    .nav-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;background:transparent;border:1px solid transparent;transition:all .18s}
+    .nav-link:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .nav-link[data-active="true"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071018}
+
+    /* SECTION STYLING */
+    section { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    h1 { font-size: 38px; margin: 10px 0 10px; line-height: 1.1; }
+
+    /* SONG PAGE SPECIFIC STYLES */
+    .song-list{display:flex;flex-direction:column;gap:16px}
+    .song{display:flex;gap:16px;align-items:flex-start;background:var(--card);padding:16px;border-radius:16px; border:1px solid rgba(255,255,255,0.05); flex-wrap: wrap;}
+    .song img{width:100px;height:100px;object-fit:cover;border-radius:12px}
+    .song-details { flex: 1; min-width: 250px; }
+    
+    .player-row { margin-top: 12px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    
+    /* AUDIO PLAYER STYLING */
+    audio { flex: 1; min-width: 200px; height: 36px; outline: none; border-radius: 999px;}
+    audio::-webkit-media-controls-panel { background-color: rgba(255,255,255,0.1); }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button { filter: invert(1); }
+
+    /* STREAMING ICONS */
+    .streaming-links { display: flex; gap: 14px; align-items: center; }
+    .stream-icon { 
+        color: #fff; 
+        font-size: 22px; 
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s; 
+        text-decoration: none; 
+        opacity: 0.8;
+    }
+    .stream-icon:hover { opacity: 1; transform: scale(1.3); }
+
+    footer{padding:40px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px; border-top: 1px solid rgba(255,255,255,0.05);}
+    .pill-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);text-decoration:none;font-weight:700; transition: 0.2s;}
+    .pill-link:hover { background: rgba(255,255,255,0.1); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="favicon.png" alt="Waka Waka Waka Logo" style="width:48px; height:48px;">
+        <div>
+          <div class="title">Waka Waka Waka Band</div>
+          <div style="font-size:12px;color:var(--muted)">Official site</div>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="songs.html" data-active="true">Songs</a>
+        <a class="nav-link" href="concerts.html">Concerts</a>
+        <a class="nav-link" href="merch.html">Merch</a>
+        <a class="nav-link" href="socials.html">Socials</a>
+      </nav>
+    </header>
+
+    <main>
+      <section style="border-bottom: none;">
+        <h1>Our Music</h1>
+        <p style="color:var(--muted); font-size: 18px; margin-bottom: 30px;">Stream our latest tracks!</p>
+
+        <div class="song-list" id="song-container">
+          <p id="status">Connecting to studio...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© Waka Waka Waka Band • 2025</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="pill-link" href="index.html">Back to Home</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const CONFIG = {
+      projectId: 'mkmpsfl1',
+      dataset: 'production',
+      apiVersion: '2024-01-01'
+    };
+
+    async function loadWakaSongs() {
+      const container = document.getElementById('song-container');
+      
+      // I've added appleMusicUrl and amazonMusicUrl to the query
+      const query = encodeURIComponent(`*[_type == "song"] | order(releaseYear desc) {
+        title, releaseYear, duration, spotifyUrl, youtubeUrl, appleMusicUrl, amazonMusicUrl,
+        "imageUrl": albumArt.asset->url,
+        "audioUrl": audioFile.asset->url
+      }`);
+      
+      const url = `https://${CONFIG.projectId}.api.sanity.io/v${CONFIG.apiVersion}/data/query/${CONFIG.dataset}?query=${query}`;
+
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        const songs = result.result;
+
+        if (!songs || songs.length === 0) {
+          container.innerHTML = "<p>No songs found in Studio.</p>";
+          return;
+        }
+
+        container.innerHTML = ''; 
+
+        songs.forEach(song => {
+          container.innerHTML += `
+            <div class="song">
+              <img alt="${song.title}" src="${song.imageUrl || 'https://via.placeholder.com/300'}">
+              <div class="song-details">
+                <div style="font-weight:800; font-size: 1.2rem;">${song.title}</div>
+                <div style="color:var(--muted);margin-top:6px">Single • ${song.releaseYear || '2025'} • ${song.duration || ''}</div>
+                
+                <div class="player-row">
+                  ${song.audioUrl ? `<audio controls src="${song.audioUrl}"></audio>` : ''}
+                  <div class="streaming-links">
+                    ${song.spotifyUrl ? `<a href="${song.spotifyUrl}" class="stream-icon" target="_blank"><i class="fab fa-spotify"></i></a>` : ''}
+                    ${song.appleMusicUrl ? `<a href="${song.appleMusicUrl}" class="stream-icon" target="_blank"><i class="fab fa-apple"></i></a>` : ''}
+                    ${song.amazonMusicUrl ? `<a href="${song.amazonMusicUrl}" class="stream-icon" target="_blank"><i class="fab fa-amazon"></i></a>` : ''}
+                    ${song.youtubeUrl ? `<a href="${song.youtubeUrl}" class="stream-icon" target="_blank"><i class="fab fa-youtube"></i></a>` : ''}
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        // Single Player Logic
+        document.addEventListener('play', function(e){
+            var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                if(audios[i] != e.target) audios[i].pause();
+            }
+        }, true);
+
+      } catch (err) {
+        container.innerHTML = `<p style="color:red">Error: ${err.message}</p>`;
+      }
+    }
+
+    loadWakaSongs();
+  </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Waka Waka Waka Band — Home</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <style>
+    /* UNIFIED GLOBAL STYLES */
+    :root{--accent:#ff4d6d;--accent-2:#39dbe8;--bg:#0b0710;--card:rgba(255,255,255,0.03);--glass:rgba(255,255,255,0.04);--text:#f6f7f9;--muted:rgba(246,247,249,0.78)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#08050a 0%, #0b0710 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit; text-decoration: none;}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+
+    /* HEADER & NAV */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom: 1px solid rgba(255,255,255,0.05);margin-bottom: 20px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .title{font-weight:800}
+
+    nav{display:flex;gap:8px;align-items:center}
+    .nav-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;background:transparent;border:1px solid transparent;transition:all .18s}
+    .nav-link:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .nav-link[data-active="true"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071018}
+
+    /* SECTION LAYOUTS */
+    section { padding: 60px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .section-grid { display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; }
+    @media(max-width:920px){ .section-grid { grid-template-columns: 1fr; text-align: center; } }
+
+    .eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:800;margin-bottom:12px;text-transform: uppercase; font-size: 11px; letter-spacing: 1px;}
+    h2 { font-size: 38px; margin: 10px 0 20px; line-height: 1.1; }
+    p.lead{color:var(--muted);font-size:18px;margin:0 0 24px; line-height: 1.6;}
+
+    /* LATEST RELEASE CARD */
+    .album-card{display:flex;gap:16px;align-items:center;background:var(--card);padding:20px;border-radius:20px;border:1px solid rgba(255,255,255,0.05)}
+    .album-art-thumb{width:100px;height:100px;border-radius:12px;overflow:hidden; flex-shrink: 0;}
+    .album-art-thumb img{width:100%;height:100%;object-fit:cover}
+
+    /* AUDIO PLAYER STYLING */
+    audio { width: 100%; height: 36px; outline: none; border-radius: 999px; margin-top: 10px;}
+    audio::-webkit-media-controls-panel { background-color: rgba(255,255,255,0.1); }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button { filter: invert(1); }
+
+    /* PHOTO WRAPPER */
+    .photo-wrap{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(2,2,10,0.6);border:1px solid rgba(255,255,255,0.05);}
+    .photo-wrap img{display:block;width:100%;height:auto}
+
+    /* PILL BUTTONS */
+    .pill-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-weight:700; transition: 0.2s;}
+    .pill-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    /* ICON ALIGNMENT */
+    .material-symbols-outlined { font-size: 50px; vertical-align: middle; }
+
+    footer{padding:40px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center; border-top: 1px solid rgba(255,255,255,0.05);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="favicon.png" alt="Waka" style="width:48px; height:48px;">
+        <div>
+          <div class="title">Waka Waka Waka Band</div>
+          <div style="font-size:12px;color:var(--muted)">Official site</div>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="index.html" data-active="true">Home</a>
+        <a class="nav-link" href="songs.html">Songs</a>
+        <a class="nav-link" href="concerts.html">Concerts</a>
+        <a class="nav-link" href="merch.html">Merch</a>
+        <a class="nav-link" href="socials.html">Socials</a>
+      </nav>
+    </header>
+
+    <main id="home-content">
+      <section><p>Loading the latest updates...</p></section>
+    </main>
+
+    <footer>
+      <div>© Waka Waka Waka Band • 2025
+        
+      </div>
+      <div style="display:flex;gap:12px;">
+        <a class="pill-link" href="socials.html">Follow Us</a>
+        <a class="pill-link" href="archive.html"> 
+          Old Site
+        
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const CONFIG = {
+      projectId: 'mkmpsfl1',
+      dataset: 'production',
+      apiVersion: '2024-01-01'
+    };
+
+    async function fetchHome() {
+      const main = document.getElementById('home-content');
+      
+      const query = encodeURIComponent(`{
+        "song": *[_type == "latestSong"][0]{
+          headline, subheadline, songTitle, releaseDateText, duration,
+          "art": albumArt.asset->url,
+          "audio": audioFile.asset->url
+        },
+        "concert": *[_type == "latestConcert"][0]{
+          concertTitle, description, highlightsUrl,
+          "img": concertImage.asset->url
+        }
+      }`);
+
+      const url = `https://${CONFIG.projectId}.api.sanity.io/v${CONFIG.apiVersion}/data/query/${CONFIG.dataset}?query=${query}`;
+
+      try {
+        const res = await fetch(url);
+        const { result } = await res.json();
+
+        let html = '';
+
+        // 1. LATEST SONG SECTION
+        if (result.song) {
+          html += `
+          <section id="latest-release">
+            <div class="section-grid">
+              <div>
+                <div class="eyebrow">New Music</div>
+                <h2>${result.song.headline}</h2>
+                <p class="lead">${result.song.subheadline}</p>
+                <div class="album-card">
+                  <div class="album-art-thumb"><img src="${result.song.art}" alt="Cover"></div>
+                  <div style="flex-grow: 1;">
+                    <div style="font-weight:800; font-size: 1.1rem;">${result.song.songTitle}</div>
+                    <div style="color:var(--muted); font-size: 13px; margin-top:4px;">${result.song.releaseDateText} • ${result.song.duration}</div>
+                    <audio controls src="${result.song.audio}"></audio>
+                  </div>
+                </div>
+                <div style="margin-top: 24px;">
+                  <a class="pill-link" href="songs.html">More Songs →</a>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: center;">
+                <img src="${result.song.art}" style="width: 80%; border-radius: 20px; transform: rotate(3deg); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+              </div>
+            </div>
+          </section>`;
+        }
+
+        // 2. CONCERT SECTION
+        if (result.concert) {
+          html += `
+          <section id="concert-recap">
+            <div class="section-grid" style="direction: rtl;">
+              <div style="direction: ltr;">
+                <div class="eyebrow">Live Event</div>
+                <h2>${result.concert.concertTitle}</h2>
+                <p class="lead">${result.concert.description}</p>
+                <div style="display:flex; gap:12px">
+                  <a class="pill-link" href="concerts.html">View Recap</a>
+                  ${result.concert.highlightsUrl ? `<a class="pill-link" href="${result.concert.highlightsUrl}" target="_blank" style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#071018; border:none;">Watch Highlights</a>` : ''}
+                </div>
+              </div>
+              <div style="direction: ltr;">
+                <div class="photo-wrap">
+                  <img src="${result.concert.img}" alt="Concert Photo">
+                </div>
+              </div>
+            </div>
+          </section>`;
+        }
+
+        // 3. STATIC MERCH SECTION
+        html += `
+          <section style="text-align: center; border-bottom: none;">
+            <div class="eyebrow">Store</div>
+            <h2>Grab the Merch</h2>
+            <p class="lead" style="margin: 0 auto 24px; max-width: 600px;">Support the band by buying our newly designed hoodies and tees!</p>
+            <a class="pill-link" href="merch.html" style="background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: #071018; border:none; padding: 14px 32px;">Visit the Shop</a>
+          </section>`;
+
+        main.innerHTML = html;
+
+      } catch (err) {
+        main.innerHTML = `<section><p style="color:red">Error loading content. Please refresh.</p></section>`;
+      }
+    }
+
+    fetchHome();
+  </script>
+</body>
+</html>
